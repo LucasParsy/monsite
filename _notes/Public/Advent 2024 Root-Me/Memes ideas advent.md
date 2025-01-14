@@ -1,0 +1,31 @@
+
+https://gojodzojo.github.io/slander-meme-generator/
+
+idees templates:
+https://www.youtube.com/watch?v=7tkvWaj3xsI
+
+
+| day chall             | text                                                                                                | meme                                                                                                               | source    |
+| --------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------- |
+| Generous Santa RCE    | Le père noel qui voit des RCE dans sa liste de souhaits.                                            | "Doug Walker Crying on the computer"                                                                               | dans site |
+| Santa Magic Sack Game | Quand tu vois le score que tu dois faire au jeu du jour 3                                           | Combien?                                                                                                           |           |
+|                       | Quand tu as fini le chall du jour en 5 minutes, mais que maintenant tu as un trou dans ton planning | mister bean waiting                                                                                                |           |
+| Friendly snowman      | le Friendly Snowman quand tu lui dis que tu es le père Noel                                         | [David Goodenough](https://tenor.com/view/david-goodenough-joueur-du-grenier-jdg-gif-11860845)                     |           |
+| Unwrap the gift       | Quand on te dis "j'utilise de  l'AES donc c'est secure"                                             | Pac man clever                                                                                                     |           |
+| Go, Pwn,Gown          | Les gens après le premier weekend de chall                                                          | "Nilessey Disappears"                                                                                              | dans site |
+| Route-Mi Shop         | Mon solde sur le Route-mi Shop                                                                      | [Money Breaking bad](https://tenor.com/view/money-breaking-bad-sleep-on-money-lay-on-money-money-pile-gif-5382667) |           |
+| Padoru<br>            | Les gens ne conaissant pas Padoru, leur son à fond                                                  | "[Punch Guy](https://tenor.com/view/lmao-gif-27165693)"                                                            |           |
+| Naughty Snowman       | La conversation avec le Naughty Snowman                                                             | Morsay "écoute moi bien petit fils de pute"                                                                        |           |
+| AI                    | Nishacid qui découvre sa facture OpenAI                                                             | "Walter White Breaks down"                                                                                         | dans site |
+|                       |                                                                                                     |                                                                                                                    | dans site |
+| Osint                 | Les chouetteurs qui cherchent l'intersection de l'axe drone-route.                                  | "[Pepe silva complotiste](https://www.youtube.com/watch?v=_nTpsv9PNqo)"                                            |           |
+| Industrial            | Le PLC qui se prend tous les payload randoms des challengers                                        | Robot dance                                                                                                        |           |
+|                       | Moi voyant la tronche des challs à partir du jour 19                                                | Spider man sad                                                                                                     |           |
+| Crypto Almost a gift  | Quand on m'explique les maths du RSA (pas fait de maths depuis le lycée)                            | Lady confused math                                                                                                 |           |
+|                       | Ceux qui attendent que Z3 solve les challs de crypto                                                | "[guy getting old]()"                                                                                              |           |
+|                       | Moi qui vais chercher des vraies vulns de smart contract après les NFT illimités du Root-XMAS       | Smelling money                                                                                                     |           |
+| Dernier jour          | La compétition pour être top 1 du leaderboard le 24                                                 | [Sweaty speedrunner](https://tenor.com/search/sweaty-speedrunner-gifs)                                             |           |
+|                       | L'OSINT des réponses du quiz de fin                                                                 | Spongebob eyes                                                                                                     |           |
+|                       | la vraie méthode pour répondre au quiz                                                              | Mr Bean Cheating                                                                                                   |           |
+|                       | Tous ceux qui ont participés à l'event                                                              | Monster Inc                                                                                                        |           |
+|                       | Les organisateurs et créateurs de challs                                                            | "Giga Chad"                                                                                                        |           |

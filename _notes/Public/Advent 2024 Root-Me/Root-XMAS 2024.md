@@ -26,4 +26,3 @@ I also did [TryHackMe's Advent of Cyber 2024](https://tryhackme.com/r/room/adven
 {%- endfor -%}
 </div>
 </div>
-{% include rmxmas_feed.html %}

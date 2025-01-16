@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 15 - New new .. always new
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_15
 date: 15-12-2024
 summary: line up for new challenges
@@ -114,3 +114,7 @@ RM{I_Thought_Th1s_VUlnerab1ility_W4s_N0t_Imp0rtant}"}
 
 
 Always strip newlines and special characters, even if you don't use files for critical data as user credentials, it can still mess up things, like Log Poisoning!
+
+| Previous day | [[Day 14 - Almost a Gift]]       |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 16 - Coil under the tree]] |

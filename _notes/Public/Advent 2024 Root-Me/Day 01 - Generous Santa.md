@@ -1,17 +1,17 @@
 ---
 title: Root-XMAS 2024 Day 01 - Generous Santa
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_01
 date: 01-12-2024
-summary: Let's upload our gift unto santa's list!
+summary: All I want for christmas is an RCE.
 ---
 ### summary
 
 
-A small challenge to start the advent, about unrestricted file upload accessible with an Local File Inclusion leading to an RCE on Node JS 
+A small challenge to start the advent, about unrestricted file upload accessible with a Local File Inclusion leading to an RCE on Node JS 
 ### recon
 
-Santa has modernized and provided a website where you can ask for gift! And I wish for an RCE, so let's add it!
+Santa has modernized and provided a website where you can ask for gifts! And I wish for an RCE, so let's add it!
 
 We have a nice website where we can add gifts to our sack. 
 Clicking on any item doesn't seem to do anything visually, but sends a request to the server.
@@ -214,3 +214,7 @@ When dynamically importing modules:
 - Restrict the paths from which you are importing. (ex: your source dir)
 - If using a user provided filename, sanitize it and prevent LFI with `path.basename()` to extract only the filename.
 - Ideally, only allow files from a whitelist.
+
+
+| Next day | [[Day 02 - Wrapped Packet]] |
+| -------- | --------------------------- |

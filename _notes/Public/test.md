@@ -1,6 +1,8 @@
 ---
 title : Markdown Rendered
 feed: hide
+permalink: /test
+summary: what are you doing here? this is my test page, go away!
 date : 01-02-2021
 ---
  

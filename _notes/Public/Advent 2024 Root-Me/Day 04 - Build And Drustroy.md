@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 04 - Build And Drustroy
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_04
 date: 04-12-2024
 summary: Rust is safe, so my project has no vulns.
@@ -97,3 +97,8 @@ curl -sSk -d '{"src/main.rs":"fn main() { include!(\"/flag/randomflaglolilolbigb
 ```
 
 As simple as one macro call!
+
+
+| Previous day | [[Day 03 - Santa's Magic Sack]]   |
+| ------------ | --------------------------------- |
+| Next day     | [[Day 05 - The Friendly Snowman]] |

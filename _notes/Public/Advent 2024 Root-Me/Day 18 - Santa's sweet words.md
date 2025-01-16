@@ -1,6 +1,6 @@
 ---
-title: Root-XMAS 2024  Day 18 - Santa's sweet words
-feed: show
+title: Root-XMAS 2024 Day 18 - Santa's sweet words
+feed: hide
 permalink: /RootXMAS_2024_18
 date: 18-12-2024
 summary: Open sesame
@@ -85,3 +85,8 @@ and we can get the flag!
 
 	RM{Why_d0esn't_Open_Ju5t_Op3n_in_rUbY??}
 ```
+
+
+| Previous day | [[Day 17 - Ghost in the shell]]           |
+| ------------ | ----------------------------------------- |
+| Next day     | [[Day 22 - The date is near]] (timeskip!) |

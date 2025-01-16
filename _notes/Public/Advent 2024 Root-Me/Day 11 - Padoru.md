@@ -1,6 +1,6 @@
 ---
 title: " Root-XMAS 2024 Day 11 - Padoru"
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_11
 date: 11-12-2024
 summary: " shader rever... PADORU PADORU!"
@@ -9,9 +9,6 @@ summary: " shader rever... PADORU PADORU!"
 
 A... shader reverse challenge? that's an original one!
 Two way to reverse them, statically, or dynamically... Let's try both!
-
-Dans Ghidra:
-&christmasKey et encTrueChristmasSecret qui sont 2 variables à checker.
  
 ### recon
 
@@ -143,7 +140,7 @@ void main()
 
 Damn, that is way, way clearer! The code is now looking very simple, let's summarize it:
 
-We have two `uniform` parameters passed to the shader, `guessedSecret` and `encTrueChristmasSecret`.
+We have two `uniform` parameters ("constant" values) passed to the shader, `guessedSecret` and `encTrueChristmasSecret`.
 There is also an `in` parameter, `finalChristmasKey` which comes from previous shaders output.
 
 At each render frame, the shader will compare each character of `guessedSecret` with the ones of `encTrueChristmasSecret` xored with the `finalChristmasKey` ( plus the character index, and modulo 25).
@@ -271,7 +268,7 @@ spirv-cross fragment.spv
 Now Let's find the parameters sent to our shaders by *padoru.exe* .
 Thankfully we have the *.pdb* debug file, so Ghidra loads the executable with some variable and methods names !
 
-We get a pretty long `main` thgat does lot of things: Get the flag input, initialize the window with [glfw](https://www.glfw.org/) , load the 3D model , the dreaded sound file with [IrrKlang](https://www.ambiera.com/irrklang/), but most importantly loads the shaders and set their parameters! And we see some suspicious code patterns:
+We get a pretty long `main` that does lot of things: Get the flag input, initialize the window with [glfw](https://www.glfw.org/) , load the 3D model , the dreaded sound file with [IrrKlang](https://www.ambiera.com/irrklang/), but most importantly loads the shaders and set their parameters! And we see some suspicious code patterns:
 
 ```c++
 if (local_b24[0] == 0xffffffff) {
@@ -303,3 +300,8 @@ And Hooray, both variables are constants! We only need to click on them, and rig
 ![[rmxmas24d11_constvars.png|const variables just chilling here ]]
 
 Damn, static analysis was more straightforward than the dynamic one!
+
+
+| Previous day | [[Day 10 - Route-Mi Shop]]       |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 12 - The Naughty Snowman]] |

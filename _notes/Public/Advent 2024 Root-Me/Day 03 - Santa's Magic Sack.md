@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 03 - Santa's Magic Sack
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_03
 date: 03-12-2024
 summary: You would never cheat a video game...
@@ -117,3 +117,8 @@ Investigating further, like finding the exact payload sent to the AES encryption
 
 I also tried dynamically modifying the score in the browser's memory with the Cheat Engine and its Linux alternative [Pince](https://github.com/korcankaraokcu/PINCE) . However, it lead to nothing, as it didn't found the score value. And it was hard to use as the game had a 20 seconds time limit! 
 I suppose some browser memory management shenanigans prevented Pince from finding the value.
+
+
+| Previous day | [[Day 02 - Wrapped Packet]]     |
+| ------------ | ------------------------------- |
+| Next day     | [[Day 04 - Build And Drustroy]] |

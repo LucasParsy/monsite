@@ -1,6 +1,6 @@
 ---
-title: Root-XMAS 2024  Day 14 - Almost a Gift
-feed: show
+title: Root-XMAS 2024 Day 14 - Almost a Gift
+feed: hide
 permalink: /RootXMAS_2024_14
 date: 14-12-2024
 summary: I only copy-paste, like a good programmer.
@@ -101,3 +101,7 @@ print(res)
 
 I win by learning almost nothing about maths, yay! 
 (sorry if you wanted a serious write-up, today is not the day, go re-read my write-up of [[Day 11 - Padoru]] instead)
+
+| Previous day | [[Day 13 - The lost gift]]         |
+| ------------ | ---------------------------------- |
+| Next day     | [[Day 15 - New new .. always new]] |

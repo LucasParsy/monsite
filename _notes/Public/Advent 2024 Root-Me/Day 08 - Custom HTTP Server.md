@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 08 - Custom HTTP Server
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_08
 date: 08-12-2024
 summary: You redirected to the wrong neighbourhood.
@@ -41,7 +41,7 @@ defined in `reporter.js` we have:
 ...
 ```
 
-Ok, so the report endpoint starts a Firefox instance with a flag cookie for the localhost, so we just have to find an XSS on it, and we can steal it!
+Ok, so the report endpoint starts a Firefox instance with a flag cookie for the localhost, we just have to find an XSS on it, and we can steal it!
 And look, there's an `/api/xss` endpoint! maybe we can find an error in its sanitizer, let's check it out! in `sanitizer.js`
 
 ```js
@@ -154,3 +154,8 @@ and we get the flag on our SimpleHTTPServer:
 ```http
 GET /?cookie=FLAG=RM{Damnn_Chrome_And_Firefox_4re_S0_different} HTTP/1.1" 200 -
 ```
+
+
+| Previous day | [[Day 07 - Go, Pwn, Gown]]       |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 09 - The Christmas Thief]] |

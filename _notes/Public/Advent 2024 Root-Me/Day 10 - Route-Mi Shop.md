@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 10 - Route-Mi Shop
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_10
 date: 10-12-2024
 summary: A use-once coupon. let's go shopping!
@@ -85,3 +85,8 @@ There must be a more efficient and reliable way to send multiple requests in par
 I also met someone who solved the challenge withe the advanced technique of... spamming the redeem button with his mouse! A  `Cookie Clicker` pro player I guess, and his technique worked very well. Sometimes the challs are that simple ^^'
 
 Race conditions are real, most of the time not as obvious as this challenge, but it's often easy to find some in the wild!
+
+
+| Previous day | [[Day 09 - The Christmas Thief]] |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 11 - Padoru]]              |

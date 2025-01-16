@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 02 - Wrapped Packet
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_02
 date: 02-12-2024
 summary: classic data exfiltration challenge.
@@ -79,3 +79,7 @@ Once manually cleaned, we get the flag!
 ### aftertought
 
 sneaky data exfiltration is real, By DNS or Ping, but if you do so, encrypt your data, as SOC can investigate the logs!
+
+| Previous day | [[Day 01 - Generous Santa]]     |
+| ------------ | ------------------------------- |
+| Next day     | [[Day 03 - Santa's Magic Sack]] |

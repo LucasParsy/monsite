@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 16 - Coil under the tree
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_16
 date: 16-12-2024
 summary: Please put me in PLC
@@ -12,7 +12,7 @@ Industrial PLC id bruteforcing and communication. Not hard if you know about the
 ### recon
 
 A challenge on a PLC!  (Programmable Logic Controller)! 
-I followed the [LeHack 2024 conference on Industrial hacking by biero](https://www.youtube.com/watch?v=2d_Snz2lOO4&list=PLzGIjwtabBqh3sF_8xIrvRqdGnzBgXD-h&index=10) and his workshop, but I didn't remembered anything about it... And it didn't matter, as it was focused on Siemens devices, when this chall was'nt! Still, I wanted to give a shoutout to this nice talk!
+I followed the [LeHack 2024 conference on Industrial hacking by biero](https://www.youtube.com/watch?v=2d_Snz2lOO4&list=PLzGIjwtabBqh3sF_8xIrvRqdGnzBgXD-h&index=10) and his workshop, but I didn't remembered anything about it... And it didn't matter, as it was focused on Siemens devices, when this chall wasn't! Still, I wanted to give a shoutout to this nice talk!
 
 Still, it's a subject I don't know at all, so sorry if I am approximative in my write-up.
 ### solution
@@ -95,3 +95,7 @@ Congratulations, you can validate this challenge with:
 
 > [!error] warning!
 > You have to read at the input register at index *0* , other indexes also contain base64 strings, but with random data. if you chose index *1* you would get lost in a false lead!
+
+| Previous day | [[Day 15 - New new .. always new]] |
+| ------------ | ---------------------------------- |
+| Next day     | [[Day 17 - Ghost in the shell]]    |

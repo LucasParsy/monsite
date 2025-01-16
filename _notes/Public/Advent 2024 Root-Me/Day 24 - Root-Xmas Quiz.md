@@ -1,6 +1,6 @@
 ---
-title: Root-XMAS 2024  Day 24 - Root-Xmas Quiz
-feed: show
+title: Root-XMAS 2024 Day 24 - Root-Xmas Quiz
+feed: hide
 permalink: /RootXMAS_2024_24
 date: 24-12-2024
 summary: cheating the exam
@@ -13,8 +13,8 @@ cheating on the exam because I don't know any answer
 
 ### recon
 
-Some answers are trolls, some are private jokes where you need to know very well  the Root-me staff, some need deep Osint, especially the "Who is the president of Root-me pro" where the first google result is outdated.
-Also, some seem bugged, as for the question 'What challenge did user "yodzeb" flag on December 26, 2011?' , when searching on the root-me stat page for the user, we can see a chall validated at this date, but it is not any of the choice provided in the quizz!
+The last challenge is a small quizz about the Root-me coomunity, but some answers are trolls, some are private jokes where you need to know very well  the Root-me staff, some need deep Osint, especially the "Who is the president of Root-me pro" where the first google result is outdated.
+Also, some seem bugged, as for the question 'What challenge did user "yodzeb" flag on December 26, 2011?' . When searching on the root-me stat page for the user, we can see a chall validated at this date, but it is not any of the choice provided in the quizz!
 
 The quiz thankfully allows us to retry as much as we want and even tells us what answers were incorrect.
 But still, I didn't wanted to do it manually, as it was tedious, you had to re-enter all 30 answers, remember which correct choices you put previously, and when you retry the quiz, new answers are randomly shuffled!
@@ -67,3 +67,7 @@ What challenge did user "yodzeb" flag on December 26, 2011? : C’est dans les v
 
 RM{YoU_ArE_The_QUiZ_MaSTeR_MERRYXMAS<3}
 ```
+
+
+| Previous day | [[Day 22 - The date is near]] |
+| ------------ | ----------------------------- |

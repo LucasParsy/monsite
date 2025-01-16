@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 17 - Ghost in the shell
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_17
 date: 17-12-2024
 summary: complex stand-alone
@@ -83,3 +83,6 @@ tail -n 1 | base64 -d > res.pdf && evince res.pdf
 
 
 
+| Previous day | [[Day 16 - Coil under the tree]] |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 18 - Santa's sweet words]] |

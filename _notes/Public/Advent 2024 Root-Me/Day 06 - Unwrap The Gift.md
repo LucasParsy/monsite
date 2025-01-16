@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 06 - Unwrap The Gift
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_06
 date: 06-12-2024
 summary: We use safe crypto implementations, no vuln can arise.
@@ -91,3 +91,8 @@ print(flag)
 
 
 now go do the [AES128-CTR](https://www.root-me.org/fr/Challenges/Cryptanalyse/AES128-CTR) challenge on Root-me, it's in the same vibe! (but harder ^^')
+
+
+| Previous day | [[Day 05 - The Friendly Snowman]] |
+| ------------ | --------------------------------- |
+| Next day     | [[Day 07 - Go, Pwn, Gown]]        |

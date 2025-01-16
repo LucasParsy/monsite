@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 09 - The Christmas Thief
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_09
 date: 09-12-2024
 summary: clear-text encryption
@@ -11,7 +11,7 @@ A PCAP containing clear HTTP uploads, notably a remoting tool config file contai
 ### recon
 
 We have a PCAP file, and let's just navigate it with Wireshark and follow our instinct.
-We see some HTTP requests, notably to `naughty-santa.xmas:8080` . The website is innacessible, and reading the content of the GET requests don't reveal any interesting leads, despite the mention of a `/flag.txt` .
+We see some HTTP requests, notably to `naughty-santa.xmas:8080` . The website is inaccessible, and reading the content of the GET requests don't reveal any interesting leads, despite the mention of a `/flag.txt` .
 
 However we see some POST request that look promising! Let's filter them on Wireshark:
 
@@ -68,3 +68,7 @@ It's been 10 years we repeat it, never use HTTP!
 Also, if your tools that store sensitive data use a default password, change it with a strong one!
 
 An easy one today after an heavy weekend :) Funny memes, but does this mean a V2 for root-me is really coming? 👀 Don't give me hope...
+
+| Previous day | [[Day 08 - Custom HTTP Server]] |
+| ------------ | ------------------------------- |
+| Next day     | [[Day 10 - Route-Mi Shop]]      |

@@ -1,6 +1,6 @@
 ---
 title: Root-XMAS 2024 Day 13 - The lost gift
-feed: show
+feed: hide
 permalink: /RootXMAS_2024_13
 date: 13-12-2024
 summary: Geoguessing flight
@@ -31,3 +31,7 @@ Careful, we landed just on the small road of the intersection, not the main one!
 "RM{"+ "Clos de la Terre Rouge".lower().replace(" ","") + "}"
 	RM{closdelaterrerouge}
 ```
+
+| Previous day | [[Day 12 - The Naughty Snowman]] |
+| ------------ | -------------------------------- |
+| Next day     | [[Day 14 - Almost a Gift]]       |

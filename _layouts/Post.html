@@ -31,12 +31,9 @@
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Hiran Venugopalan" property="og:site_name" />
-    <meta
-        content="Product and Type Designer | UI UX | Design Mentoring"
-        property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
-    <meta property="og:image" content="../assets/img/OGImg.png">
+    <meta content="tuxlu.fr" property="og:site_name" />
+    <meta content="tuxlu" property="article:author">
+    <meta property="og:image" content="/assets/img/icon/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
@@ -49,6 +46,14 @@
     <meta content="website" property="og:type">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- endif -%}
+
+    {%- if page.summary -%}
+    <meta content="{{page.summary}}" property="og:description">
+    {%- else -%}
+    <meta content="tuxlu's blog on hacking" property="og:description">
+    {%- endif -%}
+
+
 
     <title>{{page.title}} - {{site.heading}}</title>
     <!-- script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script -->
@@ -91,7 +96,7 @@
                 
                 <ul class="tree-view">
 
-                {% include toc.html html=content class="toc tree-view" item_class="toc_item" submenu_class="toc_submenu" anchor_class="toc_anchor" %}
+                {% include toc.html html=content class="toc tree-view" item_class="toc_item" submenu_class="toc_submenu" anchor_class="toc_anchor" h_max=4 %}
 
                 <li>
                     <a class="white-link" href="#top"><img src=""> back to top</a>

@@ -176,6 +176,7 @@
   }
   
   .callout-header-text {
+    font-family: 'Pixelated MS Sans Serif';
     flex: 1;
     
     font-weight: bold;

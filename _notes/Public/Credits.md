@@ -10,6 +10,8 @@ format: list
 -   [jdan](https://github.com/jdan/) for [98.css](https://jdan.github.io/98.css) (modified)
 -   [Alec Lownes](https://aleclownes.com/) for his [CRT CSS](https://aleclownes.com/2017/02/01/crt-display.html) (modified)
 -   [allejo](https://github.com/allejo/) for [jekyll-toc](https://github.com/allejo/jekyll-toc) (modified)
+-   [yaclive](https://codepen.io/yaclive) for the [Matrix rain animation](https://codepen.io/yaclive/pen/EayLYO) (modified)
+
 
 -   find the source code of this website [on my Github](https://github.com/LucasParsy/tuxlufr)
 

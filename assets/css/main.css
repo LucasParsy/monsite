@@ -1155,6 +1155,7 @@ a.box-feed:active {
 
 .content {
 }
+
 .content li + li {
   margin-top: 0em; }
 
@@ -3909,6 +3910,7 @@ a.navbar-item,
 
 .section.is-note .column.is-primary-content,
 .note-page-section {
+  padding: 0rem 1rem 0px 1rem;
   position: relative;
 }
 

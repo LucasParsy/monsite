@@ -6,19 +6,22 @@ letters = letters.split('');
 
 // Setting up the columns
 var fontSize = 18,
-columns = canvas.width / fontSize;
+  columns = canvas.width / fontSize;
 
 // Setting up the drops
 var drops = [];
 
 function resize() {
-    canvas.height = document.documentElement.scrollHeight;
-    canvas.width = canvas.offsetWidth;
-    columns = canvas.width / fontSize;
+  canvas.height = document.documentElement.scrollHeight;
+  canvas.width = canvas.offsetWidth;
+  ncolumns = canvas.width / fontSize;
+  if (columns != ncolumns) {
+    columns = ncolumns;
     for (var i = 0; i < columns; i++) {
-        drops[i] = 1;
-      }
-    console.log(document.documentElement.scrollHeight, canvas.offsetWidth, columns)
+      drops[i] = 1;
+    }
+  }
+  //console.log(document.documentElement.scrollHeight, canvas.offsetWidth, columns)
 }
 
 // Setting up the draw function
@@ -41,5 +44,5 @@ resize()
 setInterval(draw, 33);
 
 window.onresize = function () {
-    resize()
+  resize()
 }

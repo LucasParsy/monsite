@@ -1620,20 +1620,6 @@ a[href^="http"] {
     padding-top: var(--padding-thin);
 }
 
-.home-intro {
-    padding: 5% 10%;
-}
-
-@media screen and (max-width:320px)
-{
-    .home-intro {
-        padding: 0;
-    }
-
-    .home-image {
-        padding-top: 2rem;
-    }
-}
 
 
 

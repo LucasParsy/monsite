@@ -69,6 +69,10 @@
 
 
     <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" />
+    {%- if page.permalink == "/" -%}
+    <link href="{{ site.baseurl }}/assets/css/homepage.css" rel="stylesheet" media="all" class="default" />
+    {%- endif -%}
+    
 
     <!--[if IE]>
         <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
@@ -77,7 +81,12 @@
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
 </head>
 
+{%- if page.permalink == "/" -%}
+<body class="body-homepage">
+{%- else -%}
 <body class="body-crt">
+{%- endif -%}
+
     <main>
     {%- include Nav.html -%}
     <section class="section">
@@ -112,20 +121,9 @@
 
             <!-- Homepage Layout-->
             {%- if page.permalink == "/" -%}
-            <div class="column is-8-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                    {%- if site.preferences.homepage.enabled -%}
-                            <!--- Show Homepage -->
-                            {%- include Homepage.html -%}
-                    {%- else -%}
-                            <!--- Show Feed Part -->
-                <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                            <h5 class="meta-title"><a href="/">← Home</a></h5>
-                            <div class="jumbo">{{page.title}}</div>
-                            {%- include Content.html -%}
-                            {%- include Feed.html -%}
-                </div>
-                    {%- endif -%}
-            </div>
+        </div>
+            {%- include Homepage.html -%}
+            <div>
             {%- endif -%}
 
             <!--- Notes Feed Layout-->

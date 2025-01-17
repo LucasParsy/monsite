@@ -1,189 +1,200 @@
-<div class="home-intro">
-    <div class="jumbo">Welcome on tuxlu's website</div>
+<canvas id="matrix-canvas" class="matrix-canvas-homepage"></canvas>
+<div class="home-background">
+    <div class="home-intro">
+        <!--div class="grid-welcome-homepage">Welcome on tuxlu's website</div-->
 
-    <div class="callout-homepage callout-info window-homepage">
-        <div class="callout-top-header">
-            <div class="callout-icon-background">
-                <img src="/assets/img/icon/help.svg" class="icon-homepage"></img>
+        <div class="callout-homepage callout-info window-homepage grid-about-homepage">
+            <div class="callout-top-header">
+                <div class="callout-icon-background">
+                    <img src="/assets/img/icon/help.svg" class="icon-homepage"></img>
+                </div>
+                <div class="callout-header-text callout-homepage-noflex"> about</div>
+                <div class="callout-header callout-header-info"></div>
             </div>
-            <div class="callout-header-text callout-homepage-noflex"> about</div>
-            <div class="callout-header callout-header-info"></div>
-        </div>
-        <div class="window-content-homepage grid-about">
-            <div class="grid-about-left">
-                <img src="/assets/img/icon/tuxlu_avatar.png" class="avatar-homepage"></img>
-                <div>Lucas</div>
-                <div><i>"tuxlu"</i></div>
-                <div>Parsy</div>
-            </div>
-            <div class="grid-about-divider"></div>
+            <div class="window-content-homepage grid-about">
+                <div class="grid-about-left">
+                    <img src="/assets/img/icon/tuxlu_avatar.png" class="avatar-homepage"></img>
+                    <div>Lucas</div>
+                    <div><i>"tuxlu"</i></div>
+                    <div>Parsy</div>
+                </div>
+                <div class="grid-about-divider"></div>
 
-            <div>
-                <p>• Pentester - Programmer</p>
-                <p>• OSCP, CRTP,9000+ Root-me pts</p>
-                <p>• Godot/Unity3D tinkerer </p>
-                <p>• Powerpoint enthusiast </p>
+                <div>
+                    <p>• Pentester - Programmer</p>
+                    <p>• OSCP, CRTP,9000+ Root-me pts</p>
+                    <p>• Godot/Unity3D tinkerer </p>
+                    <p>• Powerpoint enthusiast </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="callout-homepage callout-info window-homepage">
-        <div class="callout-top-header">
-            <div class="callout-icon-background">
-                <img src="/assets/img/icon/loudspeaker.svg" class="icon-homepage"></img>
+        <div class="callout-homepage callout-info window-homepage grid-talks-homepage">
+            <div class="callout-top-header">
+                <div class="callout-icon-background">
+                    <img src="/assets/img/icon/loudspeaker.svg" class="icon-homepage"></img>
+                </div>
+                <div class="callout-header-text callout-homepage-noflex"> talks</div>
+                <div class="callout-header callout-header-info"></div>
             </div>
-            <div class="callout-header-text callout-homepage-noflex"> talks</div>
-            <div class="callout-header callout-header-info"></div>
-        </div>
-        <div class="window-content-homepage">
-            <p>• <a href="https://www.youtube.com/watch?v=o-VizqRKekI">Overflow,No! : sécuriser son code bas niveau
-                    avec Rust</a> </p>
-            <p>• <a href="https://www.youtube.com/watch?v=uMcO_7eu_yQ">Tout sur les XSS</a></p>
-            <p>• <a href="https://www.youtube.com/watch?v=N1BLyn8EVmc">Keep hackers cool! (and make silly UIs)</a> </p>
-            <p>• <a href="https://youtu.be/WMJT-oRXkvc?si=SHdh8RT1XLs3kEFB">Prise de notes modernes avec Obsidian</a> </p>
-        </div>
-    </div>
+            <div class="window-content-homepage">
 
-
-    <div class="callout-homepage callout-info window-homepage">
-        <div class="callout-top-header">
-            <div class="callout-icon-background">
-                <img src="/assets/img/icon/article.svg" class="icon-homepage"></img>
+                </table>
+                <p>• <a href="https://www.youtube.com/watch?v=o-VizqRKekI">Overflow,No! : sécuriser son code bas niveau
+                        avec Rust</a> 
+                        <!--a href="" class="talks-links-homepage">slides</a--> </p>
+                    </p>
+                <p>• <a href="https://www.youtube.com/watch?v=uMcO_7eu_yQ">Tout sur les XSS</a> 
+                    <!-- a href="" class="talks-links-homepage">slides</a--> </p>
+                <p>• <a href="https://www.youtube.com/watch?v=N1BLyn8EVmc">Keep hackers cool! (and make silly UIs)</a>
+                </p>
+                <p>• <a href="https://youtu.be/WMJT-oRXkvc?si=SHdh8RT1XLs3kEFB">Prise de notes modernes avec
+                        Obsidian</a> </p>
             </div>
-            <div class="callout-header-text callout-homepage-noflex"> articles</div>
-            <div class="callout-header callout-header-info"></div>
         </div>
-        <div class="window-content-homepage">
-            <div>
-                <div class="related-wrapper">
-                    {% assign note_items = site.notes | sort: "date" | reverse %}
-                    {% for note_items in note_items limit:5 %}
-                    {%- if note_items.feed == "show" -%}
-                    <div class="notelist-feed">
-                        <a href="{{ site.baseurl }}{{note_items.url}}">
-                            <h6>{{ note_items.title }}</h6>
-                            <p class="excerpt">
-                                {{ note_items.summary | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" |
-                                escape | truncate: 200 }}
-                            </p>
+
+
+        <div class="callout-homepage callout-info window-homepage grid-articles-homepage">
+            <div class="callout-top-header">
+                <div class="callout-icon-background">
+                    <img src="/assets/img/icon/article.svg" class="icon-homepage"></img>
+                </div>
+                <div class="callout-header-text callout-homepage-noflex"> articles</div>
+                <div class="callout-header callout-header-info"></div>
+            </div>
+            <div class="window-content-homepage">
+                <div>
+                    <div class="related-wrapper">
+                        {% assign note_items = site.notes | sort: "date" | reverse %}
+                        {% for note_items in note_items limit:5 %}
+                        {%- if note_items.feed == "show" -%}
+                        <div class="notelist-feed">
+                            <a href="{{ site.baseurl }}{{note_items.url}}">
+                                <h6>{{ note_items.title }}</h6>
+                                <p class="excerpt">
+                                    {{ note_items.summary | strip_html | strip | remove: "[[" | remove: "]]" | remove:
+                                    "-" |
+                                    escape | truncate: 200 }}
+                                </p>
+                            </a>
+                        </div>
+                        {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+                <p><a href="/notes">read more...</a></p>
+            </div>
+        </div>
+
+        <div class="callout-homepage callout-info window-homepage grid-socials-homepage">
+            <div class="callout-top-header">
+                <div class="callout-icon-background">
+                    <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
+                </div>
+                <div class="callout-header-text callout-homepage-noflex"> socials</div>
+                <div class="callout-header callout-header-info"></div>
+            </div>
+            <div class="window-content-homepage ">
+
+                <div class="grid-socials">
+
+                    <div class="social-homepage">
+                        <a href="https://discord.com/users/292238155548065792"><img src="/assets/img/icon/discord.svg"
+                                class="social-icon-homepage"></img>
+                            <p>Discord</p>
                         </a>
                     </div>
-                    {%- endif -%}
-                    {%- endfor -%}
+
+                    <div class="social-homepage">
+                        <a href="https://www.root-me.org/tuxlu"><img src="/assets/img/icon/rootme.svg"
+                                class="social-icon-homepage"></img>
+                            <p>Root-me</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://github.com/LucasParsy/"><img src="/assets/img/icon/github.svg"
+                                class="social-icon-homepage"></img>
+                            <p>Github</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://fr.linkedin.com/in/lucas-parsy-059637112"><img
+                                src="/assets/img/icon/linkedin.svg" class="social-icon-homepage"></img>
+                            <p>Linkedin</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://bsky.app/profile/tuxlu.bsky.social"><img src="/assets/img/icon/bluesky.svg"
+                                class="social-icon-homepage"></img>
+                            <p>BlueSky</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <img src="/assets/img/icon/loupe.svg" class="social-icon-homepage"></img>
+                        <p>OSINT me...</p> </a>
+                    </div>
+
+                </div>
+                <div>
+                    <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
+                    mail: contact<span 
+                        class="mail-space-homepage">&lt;at&gt;</span>tuxlu<span
+                        class="mail-space-homepage">&lt;point&gt;</span>fr
                 </div>
             </div>
-            <p><a href="/notes">read more...</a></p>
+        </div>
+
+
+        <div class="callout-homepage callout-info window-homepage grid-translations-homepage">
+            <div class="callout-top-header">
+                <div class="callout-icon-background">
+                    <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
+                </div>
+                <div class="callout-header-text callout-homepage-noflex"> french translations contribs</div>
+                <div class="callout-header callout-header-info"></div>
+            </div>
+            <div class="window-content-homepage ">
+
+                <div class="grid-games">
+
+                    <div class="social-homepage">
+                        <a href="https://www.youtube.com/watch?v=bMqFTuMECeA"><img src="/assets/img/icon/indiegame.png"
+                                class="social-icon-homepage"></img>
+                            <p>Indie Game the Movie (bonus)</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://play.google.com/store/apps/details?id=com.DanVogt.DATAWING"><img
+                                src="/assets/img/icon/datawing.png" class="social-icon-homepage"></img>
+                            <p>Data Wing</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://store.steampowered.com/app/317400/Portal_Stories_Mel/"><img
+                                src="/assets/img/icon/portal-mel.png" class="social-icon-homepage"></img>
+                            <p>Portal Stories: Mel</p>
+                        </a>
+                    </div>
+
+                    <div class="social-homepage">
+                        <a href="https://github.com/ftl-mv-translation/ftl-mv-translation"><img
+                                src="/assets/img/icon/ftl-mv.png" class="social-icon-homepage"></img>
+                            <p>FTL Multiverse</p>
+                        </a>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
         </div>
     </div>
-
-    <div class="callout-homepage callout-info window-homepage">
-        <div class="callout-top-header">
-            <div class="callout-icon-background">
-                <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
-            </div>
-            <div class="callout-header-text callout-homepage-noflex"> socials</div>
-            <div class="callout-header callout-header-info"></div>
-        </div>
-        <div class="window-content-homepage ">
-
-            <div class="grid-socials">
-
-                <div class="social-homepage">
-                    <a href="https://discord.com/users/292238155548065792"><img src="/assets/img/icon/discord.svg"
-                            class="social-icon-homepage"></img>
-                        <p>Discord</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://www.root-me.org/tuxlu"><img src="/assets/img/icon/rootme.svg"
-                            class="social-icon-homepage"></img>
-                        <p>Root-me</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://github.com/LucasParsy/"><img src="/assets/img/icon/github.svg"
-                            class="social-icon-homepage"></img>
-                        <p>Github</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://fr.linkedin.com/in/lucas-parsy-059637112"><img src="/assets/img/icon/linkedin.svg"
-                            class="social-icon-homepage"></img>
-                        <p>Linkedin</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://bsky.app/profile/tuxlu.bsky.social"><img src="/assets/img/icon/bluesky.svg"
-                            class="social-icon-homepage"></img>
-                        <p>BlueSky</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <img src="/assets/img/icon/loupe.svg" class="social-icon-homepage"></img>
-                    <p>OSINT me...</p> </a>
-                </div>
-
-            </div>
-            <div>
-                <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
-                mail: tux<span class="mail-space-homepage">&lt;dot&gt;</span>lu<span
-                    class="mail-space-homepage">&lt;at&gt;</span>laposte<span
-                    class="mail-space-homepage">&lt;point&gt;</span>net
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="callout-homepage callout-info window-homepage">
-        <div class="callout-top-header">
-            <div class="callout-icon-background">
-                <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
-            </div>
-            <div class="callout-header-text callout-homepage-noflex"> french translations contribs</div>
-            <div class="callout-header callout-header-info"></div>
-        </div>
-        <div class="window-content-homepage ">
-
-            <div class="grid-games">
-
-                <div class="social-homepage">
-                    <a href="https://www.youtube.com/watch?v=bMqFTuMECeA"><img src="/assets/img/icon/indiegame.png"
-                            class="social-icon-homepage"></img>
-                        <p>Indie Game the Movie (bonus)</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://play.google.com/store/apps/details?id=com.DanVogt.DATAWING"><img
-                            src="/assets/img/icon/datawing.png" class="social-icon-homepage"></img>
-                        <p>Data Wing</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://store.steampowered.com/app/317400/Portal_Stories_Mel/"><img
-                            src="/assets/img/icon/portal-mel.png" class="social-icon-homepage"></img>
-                        <p>Portal Stories: Mel</p>
-                    </a>
-                </div>
-
-                <div class="social-homepage">
-                    <a href="https://github.com/ftl-mv-translation/ftl-mv-translation"><img
-                            src="/assets/img/icon/ftl-mv.png" class="social-icon-homepage"></img>
-                        <p>FTL Multiverse</p>
-                    </a>
-                </div>
-
-
-            </div>
-
-
-
-        </div>
-    </div>
+    <script src="assets/js/matrix-homepage.js"></script>

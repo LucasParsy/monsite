@@ -14,8 +14,9 @@ var drops = [];
 function resize() {
   canvas.height = document.documentElement.scrollHeight;
   canvas.width = canvas.offsetWidth;
-  ncolumns = canvas.width / fontSize;
-  if (columns != ncolumns) {
+  ncolumns = Math.ceil(canvas.width / fontSize);
+  //firefox mobile specific tweak
+  if (Math.abs(columns - ncolumns) > 1) {
     columns = ncolumns;
     for (var i = 0; i < columns; i++) {
       drops[i] = 1;

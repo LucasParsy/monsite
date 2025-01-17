@@ -15,8 +15,9 @@ const iconMoon = "{{ site.baseurl }}/assets/img/moon.svg";
 
 
 function changeIconImgSrc(src) {
-	document.getElementById("theme-toggle-img").src = src;
-	document.getElementById("theme-toggle-img--mobile").src = src;
+	//TODO: unused for now, to put again if doing clear mode. (which is already partially the case...)
+	//document.getElementById("theme-toggle-img").src = src;
+	//document.getElementById("theme-toggle-img--mobile").src = src;
 }
 
 if (systemInitiatedDark.matches) {

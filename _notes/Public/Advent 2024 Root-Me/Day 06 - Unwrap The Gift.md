@@ -87,7 +87,7 @@ flag = xor(blob, payload)
 print(flag)
 ```
 
-`b'RM{D0NT_WR4P_YOUR_GIFTS_W1TH_W3AK_CRYPTOGRAPHY:(} \x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0f\x0fjjjj'`
+`b'RM{D0NT_WR4P_YOUR_GIFTS_ W1TH_W3AK_CRYPTOGRAPHY:(} \x0f\x0f\x0f\x0f\...\x0fjjjj'`
 
 
 now go do the [AES128-CTR](https://www.root-me.org/fr/Challenges/Cryptanalyse/AES128-CTR) challenge on Root-me, it's in the same vibe! (but harder ^^')

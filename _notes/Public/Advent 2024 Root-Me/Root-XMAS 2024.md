@@ -4,6 +4,7 @@ feed: show
 permalink: /RootXMAS_2024
 date: 16-01-2025
 summary: write-ups of Root-me's cyber advent
+thumbnail: root_xmas.png
 ---
 I followed Root-me's cyber advent this year! the event was really fun, and I learned a lot on very different subjects! Challs were progressively harder, and I dropped out after day 18, alas, but still finished top 30. 
 

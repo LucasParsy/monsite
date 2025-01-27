@@ -3,7 +3,9 @@ html {
 }
 
 #copyright-homepage {
-    margin: 3rem 0 1rem 0;
+    margin: 3rem 3rem 1rem 3rem;
+    display: flex;
+    justify-content: center;
 }
 
 .matrix-canvas-homepage {
@@ -30,7 +32,13 @@ home-background {
     gap: 16px;
 }
 
-@media screen and (min-width: 1024px) and (min-height:930px) {
+@media screen and (min-width: 1024px) and (min-height:830px) {
+
+    #copyright-homepage {
+        justify-content: start;
+    }
+    
+
     .home-intro {
         height: max-content;
         margin-top: -16px;
@@ -178,4 +186,13 @@ home-background {
 
 .grid-about-divider {
     background-color: var(--color-text-link-visited);
+}
+
+.redir_hint {
+    color: var(--color-text-link);
+    margin-left: 0.5rem;
+    font-size: var(--text-s);
+    border-bottom: dashed;
+    border-width: 1px;
+    border-color: var(--color-text-link-visited) ;
 }

@@ -65,9 +65,11 @@
             <div class="window-content-homepage">
                 <div>
                     <div class="related-wrapper">
+                        {% assign art_counter = 0 %}
                         {% assign note_items = site.notes | sort: "date" | reverse %}
-                        {% for note_items in note_items limit:5 %}
-                        {%- if note_items.feed == "show" -%}
+                        {% for note_items in note_items  -%}
+                        {%- if art_counter < 5 and note_items.feed == "show" -%}
+                        {% assign art_counter = art_counter | plus:1 %}
                         <div class="notelist-feed">
                             <a href="{{ site.baseurl }}{{note_items.url}}">
                                 <h6>{{ note_items.title }}</h6>
@@ -141,9 +143,8 @@
                 </div>
                 <div>
                     <img src="/assets/img/icon/email.svg" class="icon-homepage"></img>
-                    mail: contact<span 
-                        class="mail-space-homepage">&lt;at&gt;</span>tuxlu<span
-                        class="mail-space-homepage">&lt;point&gt;</span>fr
+                    <span id="email-addr"></span>
+                    <span class="redir_hint" title="I will reply to you from a different address">(redirection)</span> 
                 </div>
             </div>
         </div>

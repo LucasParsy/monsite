@@ -47,3 +47,13 @@ setInterval(draw, 33);
 window.onresize = function () {
   resize()
 }
+
+function rot13(message) {
+  return message.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)));
+} 
+
+function changeEmail() {
+  document.getElementById("email-addr").innerText =  rot13("pbagnpg@ghkyh.se") 
+}
+
+setTimeout(changeEmail, 100)

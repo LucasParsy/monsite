@@ -33,24 +33,29 @@
     <meta name="viewport" content="width=device-width" height="device-height" initial-scale="1" , maximum-scale="1" />
     <meta content="tuxlu.fr" property="og:site_name" />
     <meta content="tuxlu" property="article:author">
-    <meta property="og:image" content="/assets/img/favicon_integration.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- else -%}
     <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="tuxlu.fr" property="og:title">
     {%- endif -%}
 
     {%- if page.summary -%}
     <meta content="{{page.summary}}" property="og:description">
     {%- else -%}
     <meta content="tuxlu's blog on hacking" property="og:description">
+    {%- endif -%}
+    {%- if page.thumbnail -%}
+    <meta property="og:image" content="/assets/img/thumbnails/{{ page.thumbnail}}">
+    {%- else -%}
+    <meta property="og:image" content="/assets/img/favicon_integration.png">
     {%- endif -%}
 
 

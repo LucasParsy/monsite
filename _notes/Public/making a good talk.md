@@ -63,7 +63,9 @@ If slides are only for summarizing, it's because small and condensed text makes 
 Think of the ones on the far back of the room, or the people watching the replay on the phone!
 If you have a lot to say, spread it across multiple slides.
 
-Let me add a *very situational advice* on top of the generic one: **don't put too much stuff on the bottom of your slides.** If you aren't in an amphitheater, people with a tall front neighbor may have a hard time reading all your content!
+Let me add *very situational advice* on top of the generic one: adapt your slides to the location:
+- **don't show dark mode content on weak projectors**, insufficent lighting makes dark content hard to read!
+- **don't put too much stuff on the bottom of your slides if you aren't in an amphitheater**, people with a tall front neighbor may have a hard time reading all your content!
 
 ##### **go Low-Code**
 

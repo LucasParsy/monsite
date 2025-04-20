@@ -8,5 +8,6 @@ _site/
 pages/.DS_Store
 pages/tags.md
 .obsidian
+.trash
 _notes/.obsidian
 _notes/Public/.obsidian

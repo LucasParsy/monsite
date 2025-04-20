@@ -61,7 +61,7 @@ encoding: utf-8
 theme: null
 #theme: jekyll-theme-windows95
 plugins:
-  - jekyll-feed 
+#  - jekyll-feed 
   - jekyll-sitemap 
   - jekyll-tidy
     
@@ -73,6 +73,14 @@ collections:
       permalink: /note/:title
 
 markdown: kramdown
+
+# feed:
+#   icon: /assets/img/icon/favicon.svg
+#   author: tuxlu
+#   categories: 
+#     - notes
+#   collections:
+#     - notes
 
 kramdown:
   parse_block_html: true
@@ -109,17 +117,21 @@ defaults:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+include:
+  - _posts
+  - _notes
+  - _layouts
+  - assets
+  - pages
+  - _layouts
+  - _includes
+  - utilities
+  - .jekyll-cache
+  - .sass-cache
+  - CNAME
+  
 exclude:
+  - private
   - _notes/000 Inbox
   - _notes/200 Private
   - _notes/300 Templates
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

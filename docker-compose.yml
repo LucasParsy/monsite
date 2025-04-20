@@ -18,5 +18,8 @@ services:
       - ./pages:/usr/src/app/pages
       - ./_layouts:/usr/src/app/_layouts
       - ./_includes:/usr/src/app/_includes
+      - ./private:/usr/src/app/private
+
     ports:
       - "4000:4000"
+      - "35730:35730"

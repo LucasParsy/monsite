@@ -15,7 +15,7 @@ I also did [TryHackMe's Advent of Cyber 2024](https://tryhackme.com/r/room/adven
 ### write-ups
 
 <div> <div class="related-wrapper">
-{% assign note_items = site.notes | sort: "date" | %}
+{% assign note_items = site.notes | sort: "date" %}
 {% for note_items in note_items %}
 {%- if note_items.title contains "Root-XMAS 2024 Day" -%}
 <div class="notelist-feed">

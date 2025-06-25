@@ -63,7 +63,7 @@ sudo /usr/bin/dev.sh --debugmyscript
 
 ```
 
-Now as the [gtfobins 'man' command page](https://gtfobins.github.io/gtfobins/man/) shows, we can start a root shell from then `man` command executed.
+Now as the [gtfobins 'man' command page](https://gtfobins.github.io/gtfobins/man/) shows, we can start a root shell from the `man` command executed.
 
 ```bash
 sudo /usr/bin/dev.sh --debugmyscript -m

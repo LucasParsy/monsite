@@ -39,8 +39,6 @@ link for the transaction: https://www.blockchain.com/explorer/transactions/btc/8
   the flag is in `Medicine_Recipes.pdf`
 ### 2:  SOC
 
-  
-131 / 5 000
 
 We have access to an Opensearch SOC platform and we must find in the systemd and apache logs the proofs and method of an attack, namely:
 

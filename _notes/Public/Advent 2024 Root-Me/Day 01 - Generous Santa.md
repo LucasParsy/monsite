@@ -217,4 +217,3 @@ When dynamically importing modules:
 
 
 | Next day | [[Day 02 - Wrapped Packet]] |
-| -------- | --------------------------- |

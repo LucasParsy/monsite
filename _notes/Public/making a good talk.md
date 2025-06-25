@@ -46,7 +46,7 @@ Know as much as you can of what you are talking about. It's obviously okay to no
 ##### **Watch the audience, not the slides**
 
 Knowing your subject and your slides obviously help not watching them.
-People praise me for watching the audience. Truth is **I mostly stare blankly**, mechanically moving my head across the room **while I'm focused in my explanations**. People seem not to notice it, they probably watch the slides most of the time.
+People praised me for watching the audience. Truth is **I mostly stare blankly**, mechanically moving my head across the room **while I'm focused in my explanations**. People seem not to notice it, they probably watch the slides most of the time.
 
 I'll add that having a **Bluetooth remote** is a good way to move more comfortably and get a good body language in front of the audience. You can use a mouse, a 10€ remote, or even a Wiimote, they're Bluetooth! 
 

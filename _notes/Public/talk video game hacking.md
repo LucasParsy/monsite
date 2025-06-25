@@ -3,14 +3,17 @@ title: "talk: hacking video games (slides+sources)"
 feed: hide
 permalink: /talk_vghacking
 date: 11-02-2025
-summary: Creating game challs and breaking them
+summary: Breaking games and protecting yours
 ---
 A talk on video game hacking, with:
 - a broad introduction on the different game hack techniques
 - a deeper dive on the Cheat Engine Memory viewer and debugger tool
 - a tour of anti-cheat techniques and mitigations. 
 
-[PDF slides ](/assets/pdf/flag_quest_vg_hack_fr.pdf)
+[🇬🇧 English slides ](/assets/pdf/flag_quest_vg_hack_en.pdf)
+
+[🇫🇷 French slides ](/assets/pdf/flag_quest_vg_hack_fr.pdf)
+
 
 If you want to react on my talk, or point to a missing ressource, find my socials on my [homepage](/) . 😀
 
@@ -19,11 +22,13 @@ If you want to react on my talk, or point to a missing ressource, find my social
 | Type    | Author                                     | Source                                                                                                                                                       | Summary                                                                                                   |
 | ------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | Article | Irdeto                                     | [Global gaming survey: The Last checkpoint for cheating](https://irdeto.com/hubfs/resources/reports/global-gaming-report-2018.pdf)                           | Serious statistics on how hurtful to the economy is video game cheat... by the Denuvo anti-cheat provider |
+| Video   | BeHop                                      | [L'iceberg de la triche dans les jeux vidéo](https://youtu.be/CKL04xrszW0?si=-Wlrcz1vQ0SsgzDS)                                                               | History of cheating scandals in e-sport competitions (nontechnical)                                       |
 | Video   | Micode, Martin Balch                       | [On a reçu le hacker qui vendait des cheats aux pros](https://www.youtube.com/watch?v=noKIvuXpYtU)                                                           | history of hacks for tournament competitors                                                               |
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Video   | PabloMK7                                   | [ENLBufferPwn Vulnerability - Mario Kart 7 demonstration](https://www.youtube.com/watch?v=PLAVmp5ky-k)                                                       | RCE on Nintendo 3DS via Mario Kart lobby.                                                                 |
 | Article | Synacktiv, Thomas Dubier                   | [Exploiting American Conquest](https://www.synacktiv.com/publications/exploiting-american-conquest)                                                          | multiplayer pwn via chat messages.                                                                        |
 | Article | Synacktiv, Victor Cutillas , Louis Jacotot | [Exploring Counter-Strike: Global Offensive Attack Surface](https://www.synacktiv.com/publications/exploring-counter-strike-global-offensive-attack-surface) |                                                                                                           |
+| Video   | Laluka                                     | [OffenSkill - Dofus & Game Hacking Stories Ft. N0x, it4, Klaoude](https://www.youtube.com/live/Zo3ulunbhPs?si=RQPdFNwDyhPDrs54<br>)                          | French talk about Dofus Game Hacking (Network + RCE)                                                      |
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Tool    | sinai-dev                                  | [UnityExplorer](https://github.com/sinai-dev/UnityExplorer)                                                                                                  | Hook and Explore Unity objects                                                                            |
 | Tool    | oleavr                                     | [Frida](https://frida.re/)                                                                                                                                   | Hook methods everywhere                                                                                   |
@@ -48,9 +53,10 @@ If you want to react on my talk, or point to a missing ressource, find my social
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Tool    | ICSharpCode                                | [ILSpy](https://github.com/icsharpcode/ILSpy)                                                                                                                | C# Decompiler (Unity and Mono games)                                                                      |
 | Tool    | Jeremy Pritts                              | [AssetRipper]([AssetRipper](https://github.com/AssetRipper/AssetRipper))                                                                                     | Asset Rip for unity                                                                                       |
-| tool    | GDRETools                                  | [gdsdecomp](https://github.com/GDRETools/)                                                                                                                   | Godot Decompiler                                                                                          |
 | Article | Unity                                      | [IL2CPP Overview](https://docs.unity3d.com/Manual/scripting-backends-il2cpp.html)                                                                            | Explanation on Unity's IL2CPP backend                                                                     |
+| tool    | GDRETools                                  | [gdsdecomp](https://github.com/GDRETools/)                                                                                                                   | Godot Decompiler                                                                                          |
 | Article | sepTN                                      | [Protecting Your Godot Project from Decompilation](https://godot.community/topic/35/protecting-your-godot-project-from-decompilation)                        | detailed guide hindering all decompiling tools.                                                           |
+| Tool    | bearlikelion                               | [Godot Engine PR: Obfuscate the AES encryption key](https://github.com/godotengine/godot/pull/106512)                                                        | Good practices to harden your Godot game encryption.                                                      |
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Tool    | AlSch092                                   | [UltimateAntiCheat](https://github.com/AlSch092/UltimateAntiCheat)                                                                                           | Open source Windows anti-cheat                                                                            |
 | Article | ssno                                       | [Reverse Engineering Call Of Duty Anti-Cheat](https://ssno.cc/posts/reversing-tac-1-4-2025/)                                                                 | full reverse of Call of Duty anti-cheat techniques                                                        |
@@ -61,6 +67,7 @@ If you want to react on my talk, or point to a missing ressource, find my social
 | Video   | Asso HZV, Aurelien Chalot                  | [Du Driver Windows à l'EDR](https://www.youtube.com/watch?v=yacpjV6kWpM)                                                                                    | Explanation on EDR workings, similar to Kernel-level anti-cheats                                          |
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Video   | Micode, Martin Bruder                      | [On a découvert le monde fascinant des AI-cheats](https://www.youtube.com/watch?v=cb6lIg2nZu0)                                                               | Advanced anti-cheat presentation (screen reading and hardware hacks)                                      |
+
 
 
 

@@ -70,4 +70,3 @@ RM{YoU_ArE_The_QUiZ_MaSTeR_MERRYXMAS<3}
 
 
 | Previous day | [[Day 22 - The date is near]] |
-| ------------ | ----------------------------- |

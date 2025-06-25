@@ -25,7 +25,7 @@ for i in itertools.permutations(st):
 
 ### 2 : Forensic Reverse
 
-We a DLL malware has encrypted important files!
+We get a DLL malware has encrypted important files!
 We have the encrypted files and the DLL,, and we know it's written in C#. 
 Easy peasy, we can decompile it with [ILSpy](https://github.com/icsharpcode/ILSpy) or [dotPeek](https://www.jetbrains.com/fr-fr/decompiler/).
 
@@ -141,7 +141,7 @@ curl 'http://163.172.66.233:5000/api/refresh' -X POST -H 'Cookie: session=eyJsb2
 
 ```
 
-Ah! a single quote triggers an `awk` error, our input is noit correctly sanitized!
+Ah! a single quote triggers an `awk` error, our input is not correctly sanitized!
 [GTFOBins](https://gtfobins.github.io/gtfobins/awk/) tells us we can execute system commands from awk.
 We have to fix a bit our payload to close some quotes and not trigger errors anymore, but we get:
 
@@ -380,8 +380,8 @@ srv_endpoint	= drones/DEVICE_ID
 We will need to connect via the MQTT protocol! It's an IoT protocol, let's not ponder too much on what it is and how it works, and let's use a GUI tool [mqtt-explorer](https://mqtt-explorer.com/), to "subscribe" to the server's communication.
 
 we setup the connection by:
-- togging on "encryption" 
-- togging off "validate certificate",
+- toggling on "encryption" 
+- toggling off "validate certificate",
 - defining  port, user/password
 - go to "advanced to :
     - setup the certificate / client key 

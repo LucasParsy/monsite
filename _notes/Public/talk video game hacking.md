@@ -1,6 +1,6 @@
 ---
 title: "talk: hacking video games (slides+sources)"
-feed: hide
+feed: show
 permalink: /talk_vghacking
 date: 11-02-2025
 summary: Breaking games and protecting yours

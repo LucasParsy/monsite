@@ -1,10 +1,23 @@
 ---
 title: "talk: hacking video games (slides+sources)"
-feed: hide
+feed: show
 permalink: /talk_vghacking
 date: 11-02-2025
 summary: Breaking games and protecting yours
 ---
+### Grehack Workshop links:
+
+download [cheat engine on official website](https://www.cheatengine.org/)
+
+[Flag quest bin](/assets/bin/flag_quest.zip) , [Google Drive backup](https://drive.google.com/file/d/1nhgPxCl1x2dVERj-wGO7QQQlGsIOlylz/view?usp=drive_link) 
+
+[Custom Cheat and trainer files](/assets/bin/CE_trainer_flag_quest.zip) , [Google Drive backup](https://drive.google.com/file/d/1iKJSGn_Hd5rw4khnyCum2nCctDDkmaJf/view?usp=drive_link) (guess the password of the zip 😜)
+
+[Flag quest writeup](/flag_quest_writeup)
+
+[Slides of the workshop](/assets/pdf/workshop_cheat_engine.pdf)  
+#### LeHack talk slides
+
 A talk on video game hacking, with:
 - a broad introduction on the different game hack techniques
 - a deeper dive on the Cheat Engine Memory viewer and debugger tool
@@ -24,6 +37,7 @@ If you want to react on my talk, or point to a missing ressource, find my social
 | Article | Irdeto                                     | [Global gaming survey: The Last checkpoint for cheating](https://irdeto.com/hubfs/resources/reports/global-gaming-report-2018.pdf)                           | Serious statistics on how hurtful to the economy is video game cheat... by the Denuvo anti-cheat provider |
 | Video   | BeHop                                      | [L'iceberg de la triche dans les jeux vidéo](https://youtu.be/CKL04xrszW0?si=-Wlrcz1vQ0SsgzDS)                                                               | History of cheating scandals in e-sport competitions (nontechnical)                                       |
 | Video   | Micode, Martin Balch                       | [On a reçu le hacker qui vendait des cheats aux pros](https://www.youtube.com/watch?v=noKIvuXpYtU)                                                           | history of hacks for tournament competitors                                                               |
+| Video   | Simon Puech                                | [Ces gars saccagent vos jeux-vidéo](https://www.youtube.com/watch?v=9CAqqxSDai4&t=1676s)                                                                     | nontechnical presentation of the public paid video game hacks market                                      |
 |         |                                            |                                                                                                                                                              |                                                                                                           |
 | Video   | PabloMK7                                   | [ENLBufferPwn Vulnerability - Mario Kart 7 demonstration](https://www.youtube.com/watch?v=PLAVmp5ky-k)                                                       | RCE on Nintendo 3DS via Mario Kart lobby.                                                                 |
 | Article | Synacktiv, Thomas Dubier                   | [Exploiting American Conquest](https://www.synacktiv.com/publications/exploiting-american-conquest)                                                          | multiplayer pwn via chat messages.                                                                        |

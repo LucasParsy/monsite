@@ -5,7 +5,6 @@ permalink: /flag_quest_writeup
 date: 26-11-2025
 summary: By reading this writeup, you cheated not only the game but yourself.
 ---
-### writeup
 
 Hi today I will write about a cool video game challenge focused on memory hacking and using features of the CheatEngine (abbreviated **CE** from now on) tool, that I found interesting... Not saying that because I created it 😜
 

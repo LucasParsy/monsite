@@ -5,27 +5,24 @@ permalink: /talk_vghacking
 date: 11-02-2025
 summary: Breaking games and protecting yours
 ---
-### Grehack Workshop links:
 
-download [cheat engine on official website](https://www.cheatengine.org/)
-
-[Flag quest bin](/assets/bin/flag_quest.zip) , [Google Drive backup](https://drive.google.com/file/d/1nhgPxCl1x2dVERj-wGO7QQQlGsIOlylz/view?usp=drive_link) 
-
-[Custom Cheat and trainer files](/assets/bin/CE_trainer_flag_quest.zip) , [Google Drive backup](https://drive.google.com/file/d/1iKJSGn_Hd5rw4khnyCum2nCctDDkmaJf/view?usp=drive_link) (guess the password of the zip 😜)
-
-[Flag quest writeup](/flag_quest_writeup)
-
-[Slides of the workshop](/assets/pdf/workshop_cheat_engine.pdf)  
-#### LeHack talk slides
+#### My resources
 
 A talk on video game hacking, with:
 - a broad introduction on the different game hack techniques
 - a deeper dive on the Cheat Engine Memory viewer and debugger tool
-- a tour of anti-cheat techniques and mitigations. 
+- a tour of anti cheat techniques and mitigations.
 
-[🇬🇧 English slides ](/assets/pdf/flag_quest_vg_hack_en.pdf)
+‎
+- [🇫🇷 Talk French slides ](/assets/pdf/flag_quest_vg_hack_fr.pdf)
+- [🇬🇧 Talk English slides ](/assets/pdf/flag_quest_vg_hack_en.pdf)
 
-[🇫🇷 French slides ](/assets/pdf/flag_quest_vg_hack_fr.pdf)
+I created a video game CtF challenge to go along this talk, *Flag Quest*. Find the binary,  writeup and cheat table below. <br>(I tried to make my writeup one of the most complete written tutorial on Cheat Engine )
+
+- [Flag quest bin](/assets/bin/flag_quest.zip) , [Google Drive backup](https://drive.google.com/file/d/1nhgPxCl1x2dVERj-wGO7QQQlGsIOlylz/view?usp=drive_link) 
+- [Flag quest writeup](/flag_quest_writeup)
+- [Flag Quest cheat and trainer files](https://github.com/LucasParsy/flag_quest_writeup_cheat_table)
+- [Game hacking workshop slides ](/assets/pdf/workshop_cheat_engine.pdf)   
 
 
 If you want to react on my talk, or point to a missing ressource, find my socials on my [homepage](/) . 😀

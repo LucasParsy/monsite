@@ -196,7 +196,7 @@ dealloc(coinsMultiplier)
 ... // other deallocs + mem repatch
 ```
 
-You can find the final Cheat script here: flagquest_level1_coins_multiplier.CEA #todo link
+full script : [flagquest_level1_coins_multiplier.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level1_coins_multiplier.CEA)
 
 Once you created your script, you can save it in a custom file, and more importantly, add it to your main CE address list by clicking on "File" -> "Assign to current Cheat table".
 There you will see it and be able to enable/disable it in one click on it's left checkbox.
@@ -208,6 +208,7 @@ But how do we set it's value? You can from any other Cheat Engine ASM or LUA scr
 Just go back to the CE main UI, click on "add address manually", and type the name of your variable. Now you will be able to change it like you changed your coin's value previously!
 
 ![[fqw_coinmultiplier_setting.png| adding the coin multiplier address in the UI]]
+
 ##### nothing is simple: bugs with shared instructions
 
 | relevant resource                                                                  | author         | type  |
@@ -221,7 +222,7 @@ Of course, I don't know what I coded because I wrote it in an [interpreted langu
 
 So how do you find the difference between one legitimate call to your coin setting code, and one that has nothing to do with it? We check the memory around each call to this instruction, and try to find unique patterns and hardcoded values inside. 
 Who know, maybe when the coin method is called, `rbx+8 == 72` or in all other calls `rdi+24 == 1`? 
-This sounds tedious, to put a debugger on the instruction, manually check all calls and their memory... Thankfully, Cheat Engine again to the rescue with 2 features: *F"ind out what addresses this instruction accesses* and *scan for commonalities*.
+This sounds tedious, to put a debugger on the instruction, manually check all calls and their memory... Thankfully, Cheat Engine again to the rescue with 2 features: *Find out what addresses this instruction accesses* and *scan for commonalities*.
 
   Let's do this in a few clicks:
 - in the disassembler view, right-click on the coin setting instruction  -> *Find out what addresses this instruction accesses* 
@@ -235,6 +236,7 @@ This sounds tedious, to put a debugger on the instruction, manually check all ca
 - Else, it will propose to "launch structure compare", where you will be able to manually compare the values around *rax* , *rdi* or other registers to search for patterns.   
 
 summarized with a screenshot:
+
 ![[fqw_scan_commonalities.png| searching for commonalities]]
 
 
@@ -251,7 +253,7 @@ This feature is super useful, but it has one flaw: it [doesn't work across game 
 - reboot the game and repeat 2 or 3 times
 - compare all values ~~in paint~~ with a script you coded (or asked ChatGPT to do)
 
-you can find [below the script I use to compare memory dumps and find common offsets](#commonalities_scanner_script).
+you can find [the script I use to compare memory dumps and find common offsets](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/commonalities_scanner.py).
 example usage:
 
 ```bash
@@ -259,7 +261,7 @@ cat ./comm_test.txt
 	80 F4 23 40 F6
 	65 F4 8A 40 26
 	68 F4 23 40 F6
-python ./detect_commonalities_memory.py ./comm_test.txt 3
+python ./commonalities_scanner.py ./comm_test.txt 3
 	-2 = F4
 	0 = 40
 ```
@@ -288,7 +290,7 @@ normal: // normal code execution
 
 Oof, that was a very long an in-depth dive in advanced CE features. Let's go back on an higher level 😀 (but i don't promise it won't happen again...)
 
-You can again find the final Cheat script on my Github:  flagquest_level1_coins_multiplier.CEA #todo link
+full script :  [flagquest_level1_coins_multiplier.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level1_coins_multiplier.CEA) 
 ### level 1 part 2:  breaking the barriers
 
 | relevant resources                                                                  | author         | type  |
@@ -340,7 +342,7 @@ When you create the script, you find that the instruction for setting the X valu
 So `[rdi+00000498]` is the memory address we want to store in our variable, let's name it `lev1Xaddr`.
 
 here a very simplified version of our script:
-(you can find the full one here: flagquest_level1_position.CEA #todo: link)
+
 ```c
 [ENABLE]
 // other variables allocs
@@ -364,12 +366,51 @@ end: //original instructions
   jmp return
 ```
 
+full script: [flagquest_level1_position.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level1_position.CEA) 
+
 Then to add the *lev1Xaddr* variable to your address list, click "Add Address Manually" as you did for the coin multiplier previously.
 But here, check the "pointer" checkbox , and then set "lev1Xaddr" as the address and "x" as description.
 
 ![[fqw_lvl1_2_pointer.png|adding a pointer address]]
 
 And now, if your "flagquest_level1_position" script is enabled, the variable should be automatically populated with the X position of the player when you launch the platformer sequence of the game!
+
+#### LUA scripting: creating a teleport hotkey
+
+Now that we have our position address, why not have fun with it, and create a teleport hotkey?
+
+Again Cheat Engine carries us, and keep calm, we won't code in ASM, but in LUA.
+CE comes with a pretty solid [LUA interface](https://wiki.cheatengine.org/index.php?title=Help_File:Script_engine) and you can directly code cheats with it.
+[Speed Hack](https://wiki.cheatengine.org/index.php?title=Lua#Speed_Hack) , [input emulation](https://wiki.cheatengine.org/index.php?title=Lua#Input_devices), memory scanning and access, interaction with AutoAssembly, you name it!
+
+Here we create an hotkey that will move our character 40 pixels to the right when pressing the right keyboard key. (when the game window is focused!)
+
+```lua
+[ENABLE]
+
+function move(vpos, amount)
+  if (getForegroundWindow() == findWindow(null, "flag quest")) then
+    local addr = readPointer(getAddressSafe(vpos))
+    if (addr ~= nil) then
+       writeFloat(addr, readFloat(addr) + amount)
+    end
+  end
+end
+
+function moveRight()
+  move("lev1Xaddr", 40)
+end
+
+hk = createHotkey(moveRight, VK_D)
+
+[DISABLE]
+hk.destroy()
+```
+
+Again, you can find the full script for teleporting in the 4 directions here:[flagquest_level1_teleport_kbshortcuts.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level1_teleport_kbshortcuts.CEA) .
+
+You can find the [keyboard key codes on the wiki](https://wiki.cheatengine.org/index.php?title=Virtual-Key_Code).
+
 
 ### level 1 part 3:  no (code) filters
 
@@ -480,11 +521,7 @@ Also, if Speedhack does not work, relaunch the game and retry, it should work th
 #### creating an autoclicker
 
 Okay, this challenge was simple, but what if we made it simpler by overcomplicating it? 🤔
-clicking by hand is tedious, why not create an Autoclicker!
-
-Again Cheat Engine carries us, and keep calm, we won't code in ASM, but in LUA.
-CE comes with a pretty solid [LUA interface](https://wiki.cheatengine.org/index.php?title=Lua) and you can directly code cheats with it.
-[Speed Hack](https://wiki.cheatengine.org/index.php?title=Lua#Speed_Hack) , [input emulation](https://wiki.cheatengine.org/index.php?title=Lua#Input_devices), memory scanning and access, and interaction with AutoAssembly, you name it!
+clicking by hand is tedious, why not create an Autoclicker in LUA!
 
 The cheat is made more complex by the bait at the end of the dialog: You have to press the "right" key to prevent the dialog from looping.
 I couldn't find the instruction managing the text display. At first I wanted to scan the memory for the string "Do you want me to repeat", but it took too long.
@@ -533,7 +570,7 @@ l2sh_timer.destroy() --important!
 
 watch out, in LUA, to correctly stop / destroy your timer at the end.
 
-You can find my full script that also handle manual interruption and adds an hotkey here: flagquest_level2_skipdialog.CEA #todo link
+You can find my full script that also handle manual interruption and adds an hotkey here: [flagquest_level2_skipdialog.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level2_skipdialog.CEA) 
 
 ### level 3:  beyond the wall
 
@@ -615,15 +652,148 @@ and if we copy it, we get a part of the flag in the correct order. You just have
 
 ![[fqw_lvl3_flagpart.png|if you read this, youre almost there]]
 
-#### advanced Autossembly scripting 
+#### advanced scripting: camera rotation
 
-So what if we made a cool script that would rotate the camera and gradually reveal the flag? It will be a bit complicated, so let's use LUA.
+So what if we made a cool script that would rotate the camera and gradually reveal the flag? Let's mix some ASM and LUA to create this "advanced" feature.
+
+##### declaring variables in LUA
+
+Just as we saw previously in *[autoassembly: getting the position address](#autoassembly-getting-the-position-address)* , we will start by creating variables for the character position and rotation matrix.
+
+Problem: creating a variable means allocating it, registering it, setting it and unallocating it. 6 lines of code minimum for each variable... and here, we have 12 of them!
+
+By checking the memory region of these variables, we see they are contiguous and of the same 4 byte size. So I can set one variable, `lev3_z` from an autoassembly script, exactly like before, and set the 
+11 other in a loop. 
+
+I tried different methods , all with some issues, before setting to a simpler one. let's review them:
+
+**setting the variables in a separate LUA script**
+
+I don't know how to do a loop in ASM, but the LUA CE api is very powerful. you can allocate variables just with `registerSymbol("name", address)`.
+We can do our loop:
+
+```lua
+names = {"y", "x", "sz2", "sz1", "sz0",
+         "sy2", "sy1", "sy0", "sx2", "sx1", "sx0"}
+d = {}
+
+function initOtherVariables()
+  -- get lev3_z from ASM autoassembly
+  local tx = getAddressSafe("lev3_z")
+  local z_addr = readPointer(tx)
+  if x == nil then
+	return
+  end
+
+  local offset = -4 -- z - 4
+  for _, n in ipairs(names) do
+        registerSymbol("lev3_"..n, z_addr + offset)
+     offset = offset - 4
+  end
+end
+```
+
++ \+ pro: easy to set up in a separate script 
++ \- con: it is in a separate script: so if your ASM script detects that `lev3_z` memory address changes, your LUA script won't notice it. 
+
+The solution is repeating this LUA method every second via a timer. But it adds bloat, it is inefficient, adds some delay and could create some desynchronisation bugs...
+
+**Writing LUA inside your AutoAssembly**
+
+The idea of writing an LUA script is clever, but it's the bridge between the ASM and LUA that creates problem. So why not write LUA in your ASM script?
+
+This silly idea is made possible with a *newish* feature that not a lot of CE tutorial talk about:  [luacode](https://wiki.cheatengine.org/index.php?title=Auto_Assembler:LUACODE)
+You simply do like this in your auto assembly script:
+
+```c
+newmem: 
+	mov rax, [rbx+424+8] // asm code
+
+{$luacode myVar=eax}
+	printf("Tutorial hit me called. testparam=%d",myVar)
+	myVar=-2
+	registerSymbol("myVarSymbol", myVar)
+{$asm}
+
+	sub [rbx+000007F8],eax // back to asm code
+```
+
++ \+ pro: the perfect solution to mix low level and advanced features! 
++ \- con: some very strange undocumented issues.
+
+While testing this, I had crashes in my cheat,  bugs, and sometimes the LUA code would just not execute.  So much that I wrote a dedicated paragraph: [LUAcode Footguns](#luacode-footguns).
+
+> [!error] waring!
+> If you plan on using LUACode in your cheat, go check out this section, as **you will** get those issues, without clear error messages, and only referenced on obscure threads of the CE forum.
+
+Also watch out, the LUA code is of course not optimized, so if you run it 60 times per seconds, you can have slowdowns, especially if you call heavy methods like `print` .
+
+You can even improve performance by coding in C, with the [ccode](https://wiki.cheatengine.org/index.php?title=Auto_Assembler:CCODE) block. With it you can even call libraries functions, and [even LUA methods](https://forum.cheatengine.org/viewtopic.php?p=5794585#5794583) with some creativity!
 
 
+**Nocode solution: setting offsets from the GUI**
+
+Why set variables from code when the GUI already gives you all the tools?
+From the previous  [2D position script](#autoassembly-getting-the-position-address) we learned how to reference a variable in the game GUI.
+And when setting our pointer, we can add an offset!
+
+![[fqw_gui_var_offset.png| z is at 8 bytes from x position]]
+
+Only to manually declare our 12 variables with lots of GUI clicks, but then we're set. (and there is a GUI entry copy-paste helper)
+We can even recover these pointers in a LUA script in an hackish way:
+
+```lua
+addrList = getAddressList()
+local lev3_z = addrList.getMemoryRecordByDescription("lev3_z").CurrentAddress
+
+```
+
++ \+ pro: Ultra-simple, not really allocating variables 
++ \- con: First GUI setup is tedious, accessing variables from LUA is hacking and in impossible in autoassembler ASM (but with `{$luacode}` ...) 
+##### creating the rotation animation
 
 If you expect more math for the rotation animation, I'm done. As I am the game creator, I cheated, i created the animation in the game editor, and copied the rotation matrix values to my cheat sorry😅.
 
-#todo: finish this article with a deep dive on LUA scripting
+The script is just a timer that changes values gradually every 1/60 of second. It actually is in 2 steps as, with rotation matrices, nothing is as easy as "rotate 180°" and you have to swap some operations after a 90° spin.
+
+```
+y = 0°   ->  y = 90°  ->  y = 180°    
+
+1  0  1	     0  0  0      -1 0  0
+0  1  0	 ->  0  1  0  ->  0  0  0
+0  0  1	     -1 0  0      0  0 -1
+```
+
+making the code look like this:
+
+```lua
+function camSpin ()
+  grad = 0.002;
+
+  if (step == 0) then
+     ...
+     writeFloat(d["sx2"], readFloat(d["sx2"]) + grad)
+     writeFloat(d["sz0"], readFloat(d["sz0"]) - grad)
+
+    if (readFloat(d["sx2"]) >= 1) then
+       step = 1
+    end
+  end
+
+  if (step == 1) then
+	 ...
+     writeFloat(d["sx2"], readFloat(d["sx2"]) - grad)
+     writeFloat(d["sz0"], readFloat(d["sz0"]) + grad)
+
+    if (readFloat(d["sx2"]) <= 0) then
+       step = 2
+    end
+  end
+```
+
+As always, you can find the full code here: [flagquest_level3_3D_rotation_luacode.CEA](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/flagquest_level3_3D_rotation_luacode.CEA). 
+(real code has different values because the angle was a bit different)
+
 ### level 4:  final fight
 
 A final fight that is surprisingly easy to get trough. You just need to use some of the tricks you learned in the previous levels.
@@ -658,66 +828,166 @@ By debugging, we understand that this instruction corresponds to "BossHP == 0". 
 
 ### Bonus stage: creating a GUI
 
+| relevant resources                                                                                                                                                                                     | author              | type  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----- |
+| [LUA Form GUI Tutorial](https://wiki.cheatengine.org/index.php?title=Tutorial:LuaFormGUI)                                                                                                              | Cheat Engine        | Wiki  |
+| [How to Make a Trainer with Cheat Engine , HuniePop Trainer Example](https://youtu.be/uiX1eQhSboE?si=uoijAV7C8GzfD0CF) (slightly NSFW)                                                                 | Stephen Chapman     | Video |
+
 Now that we have scripted all our hacks, why not gather them in a nice and fancy GUI?
 That way we can share our hack with people that won't need to understand how Cheat Engine works, even not needing to install Cheat Engine!
 
-#todo Starting from here, the writeup in incomplete, I have to finish it and I was in a hurry, sorry ^^'
+Cheat Engine has a pretty nice and simple WYSIWYG GUI editor.
+You choose a type of element in the  *Form Designer* ribbon (an image, text box, checkbox, button, progress bar...), drag it to your trainer window, and then edit it's properties in the *Object inspector* window. 
+
+![[fqw_guiCreator.png]]
+
+As you can see, I'm not a frontend gui, so I won't explain you how the responsive layout system works. Most important properties are color, height/width (but you can resize elements from the GUI).
+Each element has it's own important properties you'll need to access: a checkbox has `Checked`, a slider (I mean "*Trackbar*") will have `Min`,`Max`,`Frequency` and most importantly `Position`. 
+
+The GUI editor only lists properties by alphabetical order, but You can find all unique properties and events of a GUI element on the [wiki : Script Engine](https://wiki.cheatengine.org/index.php?title=Help_File:Script_engine) 
+
+How do we interact with our buttons and checkboxes? with *Events*! it's the second tab on the *Object inspector* window. There you can set the `OnClick` event for a button/checkbox, or `OnChange` for a slider. 
+There you can choose one of the method you coded in your main LUA script.
+
+The main LUA script is a script that is auto-runned when you load your cheat table, and that will handle the GUI events.
+You can access it on the main window of CE, on the top ribbon -> *Table* -> *Show Cheat Table LUA script*
+
+![[fqw_cheatTable.png]]
+
+#### GUI event scripts
+
+Let's create a simple script that , when a checkbox is checked, will enable or disable one of the script we already defined, like the infinite jump:
+
+```lua
+if syntaxcheck then return end -- prevent execution while typing
+
+addrList = getAddressList()
+
+function setAct(name, value)
+  addrList.getMemoryRecordByDescription(name).Active = value
+end
+
+function infiniteJump(sender)
+  setAct("infinite jump", sender.Checked);
+end
+
+```
+
+And that's it, in only a few lines!
+One more example, setting our coin multiplier variable with the value of a slider:
+
+```lua
+function coinsMultiSlideChange(sender)
+  addr = getAddressSafe("coinsMultiplier")
+  if addr ~= nil then
+    sender.Hint = sender.Position
+    writeInteger(addr, sender.Position)
+  end
+end
+```
+
+of course you can be quite creative. As it is a script that runs when you start the cheat, you can auto-attach the cheat to the game window:
+
+```lua
+PROCESS_NAME="flag_quest.exe"
+function autoAttachTimer_tick(timer)
+  if getProcessIDFromProcessName(PROCESS_NAME) ~= nil then
+	  timer.destroy()
+	  openProcess(PROCESS_NAME)
+  end
+end
+
+autoAttachTimer = createTimer(nil)
+autoAttachTimer.Interval = 100
+autoAttachTimer.OnTimer = autoAttachTimer_tick
+```
+
+full script : [main_gui.lua](https://github.com/LucasParsy/flag_quest_writeup_cheat_table/blob/main/main_gui.lua) 
+
+You can now go back on the main CE window , *File* -> *Save As*, and save your project as a *CETrainer*, or even a *standalone* EXE so that people won't have to download Cheat engine to enjoy your cheat! 
+
+### Common scripting issues
+
+The juicy bits for the people tinkering with Cheat Engine and banging their head to obscure bugs. Read carefully as you are likely to encounter those problems.
 #### LUA footguns
 
-#### creating a GUI
+**0.: Arrays start at 1.**
 
-### After-credit sequence: hints on the achievements
+And other common LUA issues. it's a powerful language, but with some quirks, like no `+=` operator, concatenating strings with `..` , `!=` operator is actually `~=` ... check a bit the language syntax 
 
+**1: Variables are global by default**
 
-### commonalities scanner script
+If you create multiple scripts, variables may be shared if they have the same name.
+Always declare your variables with `local myVarName`
 
-#todo: put on Github
-```python
-import sys
+**2: Always delete your timers and hotkeys in the `[DISABLE]` section of your script.**
 
-def read_hex_file(filename):
-    try:
-        with open(filename, 'r') as file:
-            lines = [line.strip().split() for line in file.readlines()]
-        return lines
-    except FileNotFoundError:
-        print(f"Error: File '{filename}' not found.")
-        sys.exit(1)
+While debugging your scripts, every modification will relaunch them. But if you have methods still running periodically with timers, or enabled hotkeys, the previous iteration of your code will live along your new script version. Effectively, *your hotkeys and timers will run twice*.
+Be careful, as the "*main*" LUA script has no `[DISABLE]` section, so be wary of debugging timers/hotkeys in this specific script.
 
-def validate_lines(lines):
-    line_length = len(lines[0])
-    for line in lines:
-        if len(line) != line_length:
-            print("Error: Lines in the file have different sizes.")
-            sys.exit(1)
+**3: always put `if syntaxcheck then return end` at the start of your script**
 
-def compare_memory(lines, offset, value_size):
-    for i in range(0, len(lines[0])):
-        column = [line[i] for line in lines]
-        if all(byte == column[0] for byte in column):
-            relative_position = (i*value_size) - offset
-            print(f"{relative_position} = {column[0]}")
+Or your script will run *every time you type a character*.
 
-def main():
-    if len(sys.argv) < 3:
-        print("Usage: python detect_commonalities_memory.py <filename> <offset> (value_size=1)")
-        sys.exit(1)
+#### LUACode footguns
 
-    value_size = 1
-    filename = sys.argv[1]
-    try:
-        offset = int(sys.argv[2], 16)
-        if len(sys.argv) == 4:
-            value_size = int(sys.argv[3])
-    except ValueError:
-        print("Error: Offset must be a valid hexadecimal number. and value_size a decimal one.")
-        sys.exit(1)
+Those problems are not very clearly documented, so I hope having them all collected in a single place will help some people!
+##### The script parser breaks and silently ignores all `{$luacode}` code blocks if you have a comment block with `{}` brackets 
 
+You would say "I don't even know you could do comments with `{}`".
+But if you use a template for your script (you should), [a metadata comment block is auto-added](https://forum.cheatengine.org/viewtopic.php?p=5792948#5792948) , like this:
 
-    lines = read_hex_file(filename)
-    validate_lines(lines)
-    compare_memory(lines, offset, value_size)
-
-if __name__ == "__main__":
-    main()
 ```
+{ Game   : Tutorial-x86_64.exe
+  Date   : 2024-01-12
+
+  This script does blah blah blah
+}
+```
+
+and your LUA code is then just ignored without explication.
+
+*Solution*: remove the comment block at the start *and end* of the script, or convert it to single line comment style.
+
+##### Indenting your  `{$luacode}` instruction creates a parsing error.
+
+When creating your script, you want to indent your code.
+But if you try to do for example:
+
+```c
+code:
+	mov RAX, 3F
+	{$luacode rb=rbx}
+	print(rb)
+	{$asm}
+	sub rax, 1
+```
+
+you will get an error: `(print(rb)): this instruction can't be compiled.` 
+Whatever the content of your first line, it will be invalid. As you had the bad idea to start your `{$luacode}` line with a tabulation.
+At least the parser gives you an error this time? (even if non-relevant)
+
+*Solution*: don't indent those `{$}` blocks. ex:
+
+```c
+code:
+	mov RAX, 3F
+{$luacode rb=rbx}
+	print(rb)
+{$asm}
+	sub rax, 1
+```
+
+##### LUA runtime error are silent and can crash your game.
+
+This one is quite obscure and I couldn't reproduce it on other tutorial games, only on my game.
+
+Contary to classic LUA scripts where errors are logged in the LUA console, here runtime errors are completely silent.
+(You can access the LUA console in *Memory viewer* -> *Tools* -> *LUA engine*)
+
+Errors like doing `myVar = nonExistentVar + 2` will silently fail. The rest of your LUA code block will not be executed, but the rest of your ASM code after the block will.
+
+Maybe this error state caused some memory issue, but it had the effect that *every time I disabled my cheat, my game crashed.* 
+As you have to disable your cheat to modify it and debug it, it meant I had to relaunch my game at every change before finding my issue.
+
+*Solution*: put debug `print()` everywhere and re-read your code T_T
